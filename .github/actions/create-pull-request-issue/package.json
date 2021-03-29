@@ -1,0 +1,16 @@
+{
+  "name": "create-pull-request-issue",
+  "version": "1.0.0",
+  "description": "Creates an issue to track a merged pull request",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hayley Campbell",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^2.2.0",
+    "@octokit/rest": "^17.9.2"
+  }
+}

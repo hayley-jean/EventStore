@@ -1,0 +1,18 @@
+name: Open PR for Issue
+on:
+  issues:
+    types: [labeled]
+jobs:
+  openPr:
+    name: Open PR for Issue
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - uses: actions/checkout@v2
+      - name: Open PR for Issue
+        uses: ./.github/actions/open-pr-for-label
+        with:
+          github-token: ${{ secrets.GH_PAT }}
