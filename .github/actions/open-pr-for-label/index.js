@@ -18,7 +18,7 @@ const trackingLabel = 'tracking';
 
 async function getPullRequestOnIssue(issueBody) {
   const index = issueBody.indexOf("#");
-  issueBody.substring(index + 1);
+  const pullNumber = issueBody.substring(index + 1);
   console.log(`Pull request number: ${pullNumber}`);
 
   const pullRequest = await octokit.pulls.get({
